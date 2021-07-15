@@ -11,22 +11,22 @@
 </div>
 
 @*<div>
-    <form method="get">
+        <form method="get">
 
-        <input name="Search" value="@ViewData["search"]" style="width: 70rem"/>
-        <button class="btn btn-primary"  type="submit">SEARCH</button>
-    </form>
-    <p>SEARCH BY TITLE</p>
-</div>*@
+            <input name="Search" value="@ViewData["search"]" style="width: 70rem"/>
+            <button class="btn btn-primary"  type="submit">SEARCH</button>
+        </form>
+        <p>SEARCH BY TITLE</p>
+    </div>*@
 
 
 
-@foreach (var item in Model.Articulo)
-{
-    <div class="form-row">
-        <div class="col-6">
+<div class="row">
+    @foreach (var item in Model.Articulo)
+    {
+        <div class="col-md-4">
             <div class="col-sm-2">
-                <div class="card card-body mt-5 form-group card border-success mb-3" style="width: 70rem; ">
+                <div class="card card-body mt-5 form-group card border-success mb-3" style="width: 22rem; ">
                     <img src="@Url.Content(item.ImagenUrl)" alt="" />
                     <div class="card-mb-3">
                         <div class="card-body form-group">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-    </div>
-}
+    }
 
+</div>
 
