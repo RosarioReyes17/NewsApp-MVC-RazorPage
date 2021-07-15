@@ -1,0 +1,77 @@
+﻿@model IEnumerable<NewsAppMVC.Articulo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div style="margin-left:-120px; margin-right:-120px">
+    <table class="table table-striped table-hover table-sm ">
+        <thead>
+            <tr>
+                <th>
+                    AUTOR
+                </th>
+                <th>
+                    TITLE
+                </th>
+
+                <th>
+                    IMAGE AND DATE
+                </th>
+
+                <th>
+                    CONTENT
+                </th>
+                <th>
+                    CATEGORY
+                </th>
+                <th>
+                    SOURCE
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Autor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+
+                    <td>
+                        <img src="@Url.Content(item.ImagenUrl)" style="width: 10rem; " alt="" />
+                        <b>@Html.DisplayFor(modelItem => item.FechaPublicacion)</b>
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contenido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.NombreCategoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdFuenteNavigation.NombreFuente)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdArticulo" class="btn btn-outline-warning my-2 my-sm-0" style="width: 5rem; ">EDIT</a>
+
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.IdArticulo" class="btn btn-outline-success my-2 my-sm-0" style="width: 5rem;">DETAILS</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.IdArticulo" class="btn btn-outline-danger my-2 my-sm-0" style="width: 5rem;">DELETE</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

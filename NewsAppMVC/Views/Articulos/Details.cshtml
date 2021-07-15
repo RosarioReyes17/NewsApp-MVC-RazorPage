@@ -1,0 +1,78 @@
+﻿@model NewsAppMVC.Articulo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>ARTICLE DETAILS</h1>
+
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <b>AUTHOR</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>TITLE</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>DESCRIPTION</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>ARTICLE URL</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ArticuloUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>IMAGE URL</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImagenUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            <b>ARTICLE DATE</b> 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaPublicacion)
+        </dd>
+        <dt class="col-sm-2">
+            <b>CONTENT</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contenido)
+        </dd>
+        <dt class="col-sm-2">
+            <b>CATEGORY</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoriaNavigation.NombreCategoria)
+        </dd>
+        <dt class="col-sm-2">
+            <b> SOURCE</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdFuenteNavigation.NombreFuente)
+        </dd>
+        <dt class="col-sm-2">
+            <b>COUNTRY</b>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdPaisNavigation.NombrePais)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdArticulo"class="btn btn-success" style="width: 5rem;">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

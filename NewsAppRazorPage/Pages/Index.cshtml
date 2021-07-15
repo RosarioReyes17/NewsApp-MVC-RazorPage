@@ -1,0 +1,46 @@
+﻿@page
+@model NewsAppRazorPage.Pages.ArticlesNewsModel
+
+@{
+    ViewData["Title"] = "ArticlesNews";
+}
+
+
+<div class="d-flex align-items-center">
+
+</div>
+
+<div>
+    <form method="get">
+
+        <input name="Search" value="@ViewData["search"]" style="width: 70rem" />
+        <button class="btn btn-primary" type="submit">SEARCH</button>
+    </form>
+    <p>SEARCH BY TITLE</p>
+</div>
+
+@foreach (var item in Model.Articulo)
+{
+    <div class="form-row">
+        <div class="col-6">
+            <div class="col-sm-2">
+                <div class="card mt-5 form-group" style="width: 70rem; ">
+                    <img src="@Url.Content(item.ImagenUrl)" alt="" />
+                    <div class="card-mb-3">
+                        <div class="card-body form-group">
+                            <h6 class="card-title">@Html.DisplayFor(modelItem => item.Titulo)</h6>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Contenido)</p>
+                        </div>
+                        <div>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.FechaPublicacion) </p>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Autor) </p>
+                            <a href="@Html.DisplayFor(modelItem => item.ArticuloUrl)" class="btn btn-primary">Show More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

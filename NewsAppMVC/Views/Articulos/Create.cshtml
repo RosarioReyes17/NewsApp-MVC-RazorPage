@@ -1,0 +1,78 @@
+﻿@model NewsAppMVC.Articulo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>CREATE ARTICLE</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Autor" class="control-label"><b>AUTHOR</b></label>
+                <input asp-for="Autor" class="form-control" />
+                <span asp-validation-for="Autor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"><b>TITLE</b></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"><b>DESCRIPTION</b></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArticuloUrl" class="control-label"><b>ARTICLE URL</b></label>
+                <input asp-for="ArticuloUrl" class="form-control" />
+                <span asp-validation-for="ArticuloUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagenUrl" class="control-label"><b>IMAGE URL</b></label>
+                <input asp-for="ImagenUrl" class="form-control" />
+                <span asp-validation-for="ImagenUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaPublicacion" class="control-label"><b>PUBLICATION DATE </b></label>
+                <input asp-for="FechaPublicacion" class="form-control" />
+                <span asp-validation-for="FechaPublicacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contenido" class="control-label"><b>CONTENT</b></label>
+                <input asp-for="Contenido" class="form-control" />
+                <span asp-validation-for="Contenido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCategoria" class="control-label"><b>CATEGORY</b></label>
+                <select asp-for="IdCategoria" class="form-control" asp-items="ViewBag.IdCategoria"></select>
+                <span asp-validation-for="IdCategoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPais" class="control-label"><b>COUNTRY</b></label>
+                <select asp-for="IdPais" class="form-control" asp-items="ViewBag.IdPais"></select>
+                <span asp-validation-for="IdPais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdFuente" class="control-label"><b>SOURCE</b></label>
+                <select asp-for="IdFuente" class="form-control" asp-items="ViewBag.IdFuente"></select>
+                <span asp-validation-for="IdFuente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CREATE ARTICLE" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
