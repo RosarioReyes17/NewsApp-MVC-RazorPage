@@ -20,6 +20,15 @@
     </div>*@
 
 
+@*<div class="col-12 col-md-4 col-lg-4">
+
+    <form class="" id="FilterForm" method="post" asp-page-handler="FilterGenerated">
+        <label asp-for=" SelectedCategory "></label>
+        <select class="form-control mb-1" asp-for="SelectedCategory "
+                asp-items="@Model.CategoryList " onchange="this.form.submit()"></select>
+    </form>
+</div>*@
+
 
 <div class="row">
     @foreach (var item in Model.Articulo)
